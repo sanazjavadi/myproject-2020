@@ -7,6 +7,10 @@ export default [
     component: () => lazyLoadView(import('@views/home.vue')),
   },
   {
+    path: '/dashboard',
+    component: () => lazyLoadView(import('@layouts/dashboard.vue')),
+  },
+  {
     path: '/about',
     component: () => lazyLoadView(import('@views/about.vue')),
   },

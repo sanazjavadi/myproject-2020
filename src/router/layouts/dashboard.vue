@@ -1,15 +1,19 @@
-<script></script>
+<script>
+import navside from '@components/nav-side.vue'
+export default {
+  components: {
+    navside,
+  },
+}
+</script>
 
 <template>
-  <div :class="$style.container"> </div>
+  <div class="container-fluid">
+    <div class="col-md-2"><navside /></div>
+    <div class="col-md-10"></div>
+  </div>
 </template>
 
-<style lang="scss" module>
+<style lang="scss">
 @import '@design';
-
-.container {
-  min-width: $size-content-width-min;
-  max-width: $size-content-width-max;
-  margin: 0 auto;
-}
 </style>
