@@ -9,7 +9,7 @@ export default {
 
 <template>
   <div>
-    <div class="project d-flex justify-content-between">
+    <div class="project d-flex flex-wrap justify-content-between">
       <div>
         <h3>Projects</h3>
       </div>
@@ -17,6 +17,8 @@ export default {
         <createButton />
       </div>
     </div>
+
+    <section> </section>
   </div>
 </template>
 
