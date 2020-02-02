@@ -11,10 +11,10 @@ export default {
   <div>
     <div class="project d-flex flex-wrap justify-content-between">
       <div>
-        <h3>Projects</h3>
+        <createButton />
       </div>
       <div>
-        <createButton />
+        <h3>پروژه ها</h3>
       </div>
     </div>
 
@@ -26,9 +26,9 @@ export default {
 @import '@design';
 
 .project {
-  margin-top: 80px;
-  padding: 30px;
   width: 90%;
+  padding: 30px;
+  margin-top: 80px;
   border-bottom: 2px solid lightgrey;
 }
 </style>

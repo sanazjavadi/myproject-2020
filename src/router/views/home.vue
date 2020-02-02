@@ -1,19 +1,22 @@
 <script>
-import appConfig from '@src/app.config'
 import Layout from '@layouts/main.vue'
 
 export default {
   page: {
     title: 'Home',
-    meta: [{ name: 'description', content: appConfig.description }],
+    meta: [{ name: 'description', content: 'The Home page.' }],
   },
-  components: { Layout },
+  components: { Layout }
 }
 </script>
 
 <template>
   <Layout>
-    <h1>Home Page</h1>
-    <img src="@assets/images/logo.png" alt="Logo" />
+    Home
   </Layout>
 </template>
+
+<style lang="scss" module>
+@import '@design';
+</style>
+

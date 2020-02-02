@@ -1,10 +1,20 @@
 <script>
-export default {}
+export default {
+  data: function() {
+    return {}
+  },
+  created() {},
+  methods: {
+    createdProject() {},
+  },
+}
 </script>
 
 <template>
   <div>
-    <button>create project</button>
+    <router-link to="/createproject">
+      <button @click="createdProject">ایجاد پروژه</button>
+    </router-link>
   </div>
 </template>
 
@@ -27,11 +37,9 @@ button {
   border-radius: 30px;
   outline-style: none;
   box-shadow: rgba(34, 45, 57, 0.02) 1px 0 0 inset,
-    rgba(34, 45, 57, 0.02) -1px 0 0 inset,
-    rgba(34, 45, 57, 0.02) 0 1px 0 inset,
+    rgba(34, 45, 57, 0.02) -1px 0 0 inset, rgba(34, 45, 57, 0.02) 0 1px 0 inset,
     rgba(34, 45, 57, 0.03) 0 -1px 0 inset,
-    rgba(34, 45, 57, 0.02) 0 0 0 1px inset,
-    rgba(25, 64, 22, 0.1) 0 1px 2px 0;
+    rgba(34, 45, 57, 0.02) 0 0 0 1px inset, rgba(25, 64, 22, 0.1) 0 1px 2px 0;
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
   -webkit-appearance: none;
   &:hover {
@@ -40,8 +48,7 @@ button {
       rgba(34, 45, 57, 0.02) -1px 0 0 inset,
       rgba(34, 45, 57, 0.02) 0 1px 0 inset,
       rgba(34, 45, 57, 0.03) 0 -1px 0 inset,
-      rgba(34, 45, 57, 0.02) 0 0 0 1px inset,
-      rgba(25, 64, 22, 0.1) 0 2px 4px 0;
+      rgba(34, 45, 57, 0.02) 0 0 0 1px inset, rgba(25, 64, 22, 0.1) 0 2px 4px 0;
     transform: translateY(-1px);
   }
 }

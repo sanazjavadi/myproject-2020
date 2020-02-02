@@ -1,35 +1,42 @@
 <script>
-export default {}
+export default {
+  methods: {
+    close() {
+      this.$emit('show')
+    },
+  },
+}
 </script>
 
 <template>
   <div>
     <div
-      class="sidenav d-flex flex-column flex-wrap align-items-center justify-content-around"
+      class="sidenav d-flex flex-column  align-items-center justify-content-around"
     >
+      <span class="close" @click="close">&times;</span>
       <div class="comment align-self-end"
         ><img
           src="https://img.icons8.com/material-sharp/24/000000/speech-bubble-with-dots.png"
       /></div>
-      <div class="logo"
+      <div class="logo pt-5 mt-5"
         ><img
           src="https://www.pngkey.com/png/detail/381-3817253_marvel-app-logo.png"
           alt=""
       /></div>
-      <div class="center justify-content-between">
+      <div class="center justify-content-between mt-5 mt-5">
         <div class="menu">
           <ul>
-            <li> <a href="#">Projects</a></li>
-            <li> <a href="#">Folders</a></li>
-            <li> <a href="#">Archives</a></li>
+            <li> <router-link to="/dashboard">پروژه ها</router-link> </li>
+            <li> <router-link to="/dashboard/folders">فولدرها</router-link></li>
+            <li> <router-link to="/dashboard/archive">آرشیو</router-link></li>
           </ul>
         </div>
         <div class="team pt-5">
           <ul>
-            <li> <a href="#">Team</a></li>
-            <li><a href="#">Peaple</a></li>
-            <li><a href="#">Groups</a></li>
-            <li> <a href="#">Settings</a></li>
+            <li><router-link to="/dashboard/team">تیم</router-link></li>
+            <li><a href="#">مردم</a></li>
+            <li><a href="#">گروه ها</a></li>
+            <li> <a href="#">تنظیمات</a></li>
             <li> <a href="#">SSo</a></li>
             <li class="pt-4"> <a href="#">Help</a></li>
             <li> <a href="#">upgrade</a></li>
@@ -37,12 +44,12 @@ export default {}
         </div>
       </div>
 
-      <div class="profile d-flex  justify-content-center">
+      <div class="profile d-flex  justify-content-center pt-5 mt-5">
+        <div class="align-self-center">نام و نام خانوادگی</div>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRUIDpGje3cZmYgE9GbW5hZ64PnCfR6XGntb2EoZQsRIHN2_rb"
           alt=""
         />
-        <div class="align-self-center">name family</div>
       </div>
     </div>
   </div>
@@ -55,16 +62,14 @@ export default {}
   margin: 0;
 }
 .sidenav {
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1;
   width: 230px;
-  height: 100%;
+  height: 100vh;
   padding-top: 20px;
   padding-right: 20px;
   color: black;
-  border-right: 2px solid lightgray;
+  border-left: 2px solid lightgray;
+  text-align: right;
 }
 ul {
   list-style: none;
@@ -92,15 +97,29 @@ img {
 .logo {
   width: 50%;
 }
-.center {
-  height: 60%;
-}
+
 .profile img {
   width: 20%;
+  background-color: inherit;
+}
+.profile {
+  margin-top: 500px;
 }
 .comment {
   padding: 5px;
   border: 2px solid lightgray;
   border-radius: 50%;
+}
+.close {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: lightblue;
+  }
 }
 </style>
