@@ -19,7 +19,7 @@ export default {
         <createButton @click="createProjects" />
       </div>
       <div>
-        <h3>پروژه ها</h3>
+        <h3> {{ store.state.local.Title }}</h3>
       </div>
     </div>
 

@@ -1,17 +1,13 @@
 <script>
 export default {
-  data() {
-    return {
-      selectedTitle: 'پروژه ها',
-    }
-  },
+  data() {},
   methods: {
     close() {
       this.$emit('show')
     },
-    changeTitle(title) {
+    changeTitle(selectedTitle) {
       this.$store.commit('changeTitle', {
-        Title: this.selectedTitle,
+        Title: selectedTitle,
       })
     },
   },
@@ -94,8 +90,8 @@ export default {
   padding-top: 20px;
   padding-right: 20px;
   color: black;
-  border-left: 2px solid lightgray;
   text-align: right;
+  border-left: 2px solid lightgray;
 }
 ul {
   list-style: none;
@@ -138,8 +134,8 @@ img {
 }
 .close {
   position: absolute;
-  left: 10px;
   top: 5px;
+  left: 10px;
   width: 10px;
   height: 10px;
   cursor: pointer;

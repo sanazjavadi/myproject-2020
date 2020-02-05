@@ -14,7 +14,8 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.dispatch('signUp', {
+      console.log(this.$store)
+      this.$store.dispatch('users/signUp', {
         email: this.signUp.email,
         password: this.signUp.password,
       })
@@ -29,12 +30,12 @@ export default {
       <div class="header">
         <h3>ثبت نام</h3>
       </div>
-      <form class="submit">
+      <form class="submit" @submit.prevent="submit">
         <label>ایمیل</label>
         <input v-model="signUp.email" />
         <label>پسورد</label>
         <input v-model="signUp.password" />
-        <button class="send self-align-center" @click="submit">ارسال</button>
+        <input value="ارسال" type="submit" class="send self-align-center" />
       </form>
     </div>
   </div>
@@ -53,30 +54,30 @@ export default {
   border-bottom: 2px solid lightgray;
 }
 .submit {
-  padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 10px;
 }
 input {
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
   height: 70px;
-  outline: none;
+  margin-bottom: 20px;
   border: none;
   border-radius: 0;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin-bottom: 20px;
 }
 input {
   padding: 10px;
-  border-width: 2px;
-  border-style: solid;
   border-color: lightgray;
+  border-style: solid;
+  border-width: 2px;
 
   &:focus {
     border-color: gray;
@@ -88,17 +89,17 @@ input {
 }
 label {
   display: block;
-  margin-bottom: 0.25em;
   padding: 10px;
+  margin-bottom: 0.25em;
   font-size: 18px;
   font-weight: 900;
 }
 .send {
   padding: 10px 30px;
+  font-weight: 900;
+  cursor: pointer;
   border: 2px solid lightgray;
   border-radius: 30px;
   outline: none;
-  cursor: pointer;
-  font-weight: 900;
 }
 </style>

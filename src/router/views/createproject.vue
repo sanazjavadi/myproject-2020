@@ -49,12 +49,12 @@ export default {
 @import '@design';
 .closing {
   position: absolute;
-  border: 2px solid #8633fc;
-  padding: 10px 15px;
   top: 30px;
   right: 30px;
-  font-weight: 900;
+  padding: 10px 15px;
   font-size: 18px;
+  font-weight: 900;
+  border: 2px solid #8633fc;
   border-radius: 100%;
 }
 .form {
@@ -62,36 +62,36 @@ export default {
   text-align: right;
 }
 .header {
-  color: #8633fc;
   display: block;
   padding: 20px 10px;
+  color: #8633fc;
   border-bottom: 2px solid #8633fc;
 }
 .create {
-  padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 10px;
 }
 input {
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
   height: 70px;
-  outline: none;
+  margin-bottom: 20px;
   border: none;
   border-radius: 0;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin-bottom: 20px;
 }
 input {
   padding: 10px;
-  border-width: 2px;
-  border-style: solid;
   border-color: #ffbe1d;
+  border-style: solid;
+  border-width: 2px;
 
   &:focus {
     border-color: gray;
@@ -103,8 +103,8 @@ input {
 }
 label {
   display: block;
-  margin-bottom: 0.25em;
   padding: 10px;
+  margin-bottom: 0.25em;
   font-size: 18px;
   font-weight: 900;
 }

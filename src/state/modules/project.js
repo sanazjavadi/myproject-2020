@@ -18,8 +18,8 @@ export const mutations = {
   getToken(data) {
     state.projects = data
   },
-  setProject() {
-    state.projects.push()
+  setProject(name) {
+    state.projects.push(name)
   }
 }
 
@@ -37,12 +37,12 @@ export const actions = {
   },
   createProjects({
     commit
-  }) {
+  }, payload) {
     api.post('/pages', {
-
+        name: payload.name
       })
       .then(res => {
-        commit('setProject', )
+        commit('setProject', payload.name)
       })
       .catch(err => {
         console.log(err)
