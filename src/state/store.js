@@ -4,6 +4,8 @@ import dispatchActionForAllModules from '@utils/dispatch-action-for-all-modules'
 
 import modules from './modules'
 
+
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -13,6 +15,8 @@ const store = new Vuex.Store({
   // https://vuex.vuejs.org/guide/strict.html
   strict: process.env.NODE_ENV !== 'production',
 })
+
+
 
 export default store
 

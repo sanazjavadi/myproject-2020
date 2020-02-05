@@ -1,6 +1,6 @@
 <script>
 import createButton from '@components/create-button.vue'
-// import api from '@api/index.js'
+
 export default {
   components: {
     createButton,
@@ -14,12 +14,10 @@ export default {
     }
   },
   methods: {
-    createdProject() {
-      // const data = this.newProject
-      // axios
-      //   .post('/api/pages', data)
-      //   .then((res) => {})
-      //   .catch()
+    createProjects() {
+      this.$store.dispatch('createProject', {
+        name: this.newProject.name,
+      })
     },
   },
 }
@@ -40,7 +38,7 @@ export default {
           <input v-model="newProject.name" type="text" />
           <label>موضوع پروژه</label>
           <input v-mode="newProject.details" />
-          <createButton @click="createProject" />
+          <createButton @click="createProjects" />
         </form>
       </div>
     </div>
@@ -51,7 +49,7 @@ export default {
 @import '@design';
 .closing {
   position: absolute;
-  border: 2px solid lightgrey;
+  border: 2px solid #8633fc;
   padding: 10px 15px;
   top: 30px;
   right: 30px;
@@ -64,9 +62,10 @@ export default {
   text-align: right;
 }
 .header {
+  color: #8633fc;
   display: block;
   padding: 20px 10px;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid #8633fc;
 }
 .create {
   padding: 20px 10px;
@@ -92,7 +91,7 @@ input {
   padding: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: lightgray;
+  border-color: #ffbe1d;
 
   &:focus {
     border-color: gray;

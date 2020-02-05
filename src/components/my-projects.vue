@@ -1,9 +1,14 @@
 <script>
 import createButton from '@components/create-button.vue'
+
 export default {
   components: {
     createButton,
   },
+  data() {
+    return {}
+  },
+  methods: {},
 }
 </script>
 
@@ -11,7 +16,7 @@ export default {
   <div>
     <div class="project d-flex flex-wrap justify-content-between">
       <div>
-        <createButton />
+        <createButton @click="createProjects" />
       </div>
       <div>
         <h3>پروژه ها</h3>

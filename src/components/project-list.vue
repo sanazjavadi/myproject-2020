@@ -3,15 +3,25 @@ export default {
   data: function() {
     return {}
   },
-  created() {},
-  methods: {},
+  created() {
+    this.getProjects()
+  },
+  methods: {
+    getprojects() {
+      this.$store.dispatch('getProject')
+    },
+  },
 }
 </script>
 
 <template>
-  <div> project list</div>
+  <div>
+    <div v-for="(project, index) in getprojects" :key="index">
+      {{ project }}
+    </div>
+  </div>
 </template>
 
-<style lang="scss" module>
+<style lang="scss">
 @import '@design';
 </style>

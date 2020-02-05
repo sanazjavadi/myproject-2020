@@ -32,7 +32,7 @@ button {
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: rgb(96, 217, 86);
+  background-color: #8633fc;
   border-style: none;
   border-radius: 30px;
   outline-style: none;

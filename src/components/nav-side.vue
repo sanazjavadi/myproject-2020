@@ -1,8 +1,18 @@
 <script>
 export default {
+  data() {
+    return {
+      selectedTitle: 'پروژه ها',
+    }
+  },
   methods: {
     close() {
       this.$emit('show')
+    },
+    changeTitle(title) {
+      this.$store.commit('changeTitle', {
+        Title: this.selectedTitle,
+      })
     },
   },
 }
@@ -26,9 +36,25 @@ export default {
       <div class="center justify-content-between mt-5 mt-5">
         <div class="menu">
           <ul>
-            <li> <router-link to="/dashboard">پروژه ها</router-link> </li>
-            <li> <router-link to="/dashboard/folders">فولدرها</router-link></li>
-            <li> <router-link to="/dashboard/archive">آرشیو</router-link></li>
+            <li>
+              <router-link to="/dashboard" @click="changeTitle('پروژه ها')"
+                >پروژه ها</router-link
+              >
+            </li>
+            <li>
+              <router-link
+                to="/dashboard/folders"
+                @click="changeTitle('فولدرها ')"
+                >فولدرها</router-link
+              ></li
+            >
+            <li>
+              <router-link
+                to="/dashboard/archive"
+                @click="changeTitle('آرشیو ')"
+                >آرشیو</router-link
+              ></li
+            >
           </ul>
         </div>
         <div class="team pt-5">
